@@ -131,20 +131,6 @@ pnpm dev
 - `CRUD /api/v1/admin/dept-tags` - 院系管理
 - `GET /api/v1/admin/usage/overview` - 用量统计
 
-## 部署
-
-### 前端部署
-```bash
-./deploy-front.sh
-```
-
-### 后端部署
-```bash
-cp launch.sh.example launch.sh
-# 编辑 launch.sh 配置服务器信息
-./launch.sh start
-```
-
 ## 许可证
 
 MIT License
