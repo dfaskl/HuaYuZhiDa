@@ -47,10 +47,16 @@
 - Token 用量配额（日限额/余额两种模式）
 - 微信支付充值
 
+## 界面展示
+
+| 登录页 | 对话界面 | 知识库管理 |
+|:---:|:---:|:---:|
+| ![登录页](pics/登录页.png) | ![对话界面](pics/对话界面.png) | ![知识库管理页](pics/知识库管理页.png) |
+
 ## 快速开始
 
 ### 环境要求
-- Java 17
+- Java 17+（推荐 23）
 - Maven 3.8.6+
 - Node.js 18.20.0+
 - pnpm 8.7.0+
@@ -63,16 +69,27 @@
 ### 配置
 ```bash
 cp .env.example .env
-# 编辑 .env 文件，填写数据库、Redis、Kafka、MinIO、ES 等连接信息
+# 编辑 .env 文件，填写以下必要配置：
+#   - 数据库连接（SPRING_DATASOURCE_*）
+#   - Redis 连接（SPRING_DATA_REDIS_*）
+#   - DeepSeek API Key（DEEPSEEK_API_KEY）—— 对话功能必需
+#   - DashScope API Key（EMBEDDING_API_KEY）—— 向量化功能必需
+#   - MinIO / Kafka / ES 连接信息
 ```
 
-### 启动后端
+### 一键启动（推荐）
+
+确保 Redis、MySQL、Elasticsearch、Kafka、MinIO 已安装在 `D:\tools\` 目录下，双击 `run.cmd` 即可一键启动所有服务。
+
+停止服务双击 `stop.cmd`。
+
+### 手动启动
+
 ```bash
+# 后端
 mvn spring-boot:run
-```
 
-### 启动前端
-```bash
+# 前端
 cd frontend
 pnpm install
 pnpm dev
@@ -83,7 +100,10 @@ pnpm dev
 ## 项目结构
 
 ```
-├── src/main/java/com/huayu/smartqa/   # 后端代码
+├── run.cmd / stop.cmd                  # 一键启动/停止脚本
+├── start-all.ps1 / stop-all.ps1        # PowerShell 启动/停止逻辑
+├── .env                                # 环境配置（API Key、数据库等）
+├── src/main/java/com/huayu/smartqa/    # 后端代码
 │   ├── config/                         # 配置类
 │   ├── controller/                     # REST 控制器
 │   ├── service/                        # 业务逻辑
@@ -103,7 +123,8 @@ pnpm dev
 │   │   ├── router/                     # 路由配置
 │   │   └── locales/                    # 国际化
 │   └── packages/                       # 工作区包
-└── docs/                               # 文档和配置
+├── docs/                               # 文档和配置
+└── pics/                               # 项目截图
 ```
 
 ## API 端点
@@ -128,7 +149,7 @@ pnpm dev
 
 ### 管理后台
 - `GET /api/v1/admin/users` - 用户管理
-- `CRUD /api/v1/admin/dept-tags` - 院系管理
+- `CRUD /api/v1/admin/org-tags` - 院系管理
 - `GET /api/v1/admin/usage/overview` - 用量统计
 
 ## 许可证
