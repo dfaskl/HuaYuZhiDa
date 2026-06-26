@@ -9,7 +9,7 @@
 - **数据库**: MySQL 8.0 + JPA/Hibernate
 - **搜索引擎**: Elasticsearch 8.10 (IK 中文分词, 2048 维向量)
 - **缓存**: Redis 7.0
-- **消息队列**: Kafka 3.2
+- **消息队列**: Kafka 3.2+
 - **对象存储**: MinIO 8.5
 - **AI 服务**: DeepSeek API (LLM) + DashScope Embedding (向量化)
 - **认证**: JWT + Spring Security
@@ -67,9 +67,9 @@
 - pnpm 8.7.0+
 - MySQL 8.0
 - Elasticsearch 8.10.0
-- MinIO 8.5.12
-- Kafka 3.2.1
-- Redis 7.0.11
+- MinIO 8.5+
+- Kafka 3.2+
+- Redis 7.0+
 
 ### 配置
 ```bash
@@ -84,9 +84,9 @@ cp .env.example .env
 
 ### 一键启动（推荐）
 
-确保 Redis、MySQL、Elasticsearch、Kafka、MinIO 已安装在 `D:\tools\` 目录下，双击 `run.cmd` 即可一键启动所有服务。
+双击 `run.cmd` 即可一键启动所有服务（Redis、MinIO、Elasticsearch、Kafka、后端、前端）。停止服务双击 `stop.cmd`。
 
-停止服务双击 `stop.cmd`。
+> 需要将 Redis、MinIO、Elasticsearch、Kafka 安装在 `D:\tools\` 目录下，路径可在 `start-all.ps1` 中修改。
 
 ### 手动启动
 
@@ -107,6 +107,8 @@ pnpm dev
 ```
 ├── run.cmd / stop.cmd                  # 一键启动/停止脚本
 ├── start-all.ps1 / stop-all.ps1        # PowerShell 启动/停止逻辑
+├── pom.xml                             # Maven 项目配置
+├── infra.sh                            # 基础设施服务启停脚本
 ├── .env                                # 环境配置（API Key、数据库等）
 ├── src/main/java/com/huayu/smartqa/    # 后端代码
 │   ├── config/                         # 配置类
