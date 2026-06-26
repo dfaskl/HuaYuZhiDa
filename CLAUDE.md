@@ -125,7 +125,7 @@ WebSocket /chat/{token} → ChatWebSocketHandler → ChatHandler
 - Root `.env` file drives all backend config via `DotenvEnvironmentPostProcessor`
 - Frontend `.env.test` (dev, points to localhost:8081) and `.env.prod` (relative paths)
 - Backend profiles: `dev` (default, ES http), `docker` (MinIO port 19000), `prod` (no show-sql, restricted logging)
-- Test profile: H2 in-memory DB (`jdbc:h2:mem:paismart;MODE=MySQL`), `ddl-auto: create-drop`
+- Test profile: H2 in-memory DB (`jdbc:h2:mem:huayuqa;MODE=MySQL`), `ddl-auto: create-drop`
 
 ### Key Infrastructure Dependencies
 | Service | Purpose | Default Port |

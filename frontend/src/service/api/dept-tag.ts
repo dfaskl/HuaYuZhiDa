@@ -2,13 +2,13 @@
 import { request } from '../request';
 
 export function fetchGetDeptTagTree() {
-  return request<Api.DeptTag.Item[]>({ url: '/admin/dept-tags/tree' });
+  return request<Api.DeptTag.Item[]>({ url: '/admin/org-tags/tree' });
 }
 
 export async function fetchGetDeptTagList(
   params: Api.Common.CommonSearchParams = {}
 ): Promise<FlatResponseData<Api.DeptTag.List>> {
-  const response = await request<Api.DeptTag.Item[] | Api.DeptTag.List>({ url: '/admin/dept-tags/tree', params });
+  const response = await request<Api.DeptTag.Item[] | Api.DeptTag.List>({ url: '/admin/org-tags/tree', params });
   if (response.error) return response as FlatResponseData<Api.DeptTag.List>;
 
   const payload = response.data;

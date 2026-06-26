@@ -101,7 +101,7 @@ const mobilePagination = computed(() => ({
 
 const hasCheckedRows = computed(() => checkedRowKeys.value.length > 0);
 
-const inviteShareBaseUrl = 'https://smart.paicoding.com/#/login/register';
+const inviteShareBaseUrl = `${window.location.origin}/#/login/register`;
 
 const columns = computed<DataTableColumns<Api.InviteCode.Item>>(() => [
   {

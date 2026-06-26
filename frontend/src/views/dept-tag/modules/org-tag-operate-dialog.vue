@@ -74,8 +74,8 @@ async function handleSubmit() {
 
   let res: FlatResponseData;
   if (props.operateType === 'edit')
-    res = await request({ url: `/admin/dept-tags/${editingTagId.value}`, method: 'PUT', data: payload });
-  else res = await request({ url: '/admin/dept-tags', method: 'POST', data: payload });
+    res = await request({ url: `/admin/org-tags/${editingTagId.value}`, method: 'PUT', data: payload });
+  else res = await request({ url: '/admin/org-tags', method: 'POST', data: payload });
   if (!res.error) {
     window.$message?.success('操作成功');
     close();

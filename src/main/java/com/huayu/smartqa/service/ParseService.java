@@ -362,10 +362,10 @@ public class ParseService {
             throw new IOException("不支持的 PDF 解析引擎: " + pdfParsingEngine);
         }
 
-        Path inputPath = Files.createTempFile("paismart-liteparse-", ".pdf");
-        Path outputPath = Files.createTempFile("paismart-liteparse-", ".json");
-        Path stdoutPath = Files.createTempFile("paismart-liteparse-", ".out");
-        Path stderrPath = Files.createTempFile("paismart-liteparse-", ".err");
+        Path inputPath = Files.createTempFile("huayuqa-liteparse-", ".pdf");
+        Path outputPath = Files.createTempFile("huayuqa-liteparse-", ".json");
+        Path stdoutPath = Files.createTempFile("huayuqa-liteparse-", ".out");
+        Path stderrPath = Files.createTempFile("huayuqa-liteparse-", ".err");
 
         try {
             Files.copy(fileStream, inputPath, java.nio.file.StandardCopyOption.REPLACE_EXISTING);

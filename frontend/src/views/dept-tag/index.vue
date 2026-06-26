@@ -80,7 +80,7 @@ function edit(row: Api.DeptTag.Item) {
 }
 
 async function handleDelete(tagId: string) {
-  const { error } = await request({ url: `/admin/dept-tags/${tagId}`, method: 'DELETE' });
+  const { error } = await request({ url: `/admin/org-tags/${tagId}`, method: 'DELETE' });
   if (!error) {
     onDeleted();
   }

@@ -75,7 +75,7 @@ frontend/src/typings/auto-imports.d.ts
 frontend/public/languages
 frontend/public/themes
 src/main/resources/application.yml~
-frontend/paicoding.pem
+frontend/huayuqa.pem
 frontend/AutoClaw.pem
 *.pem
 src/main/resources/cert

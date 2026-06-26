@@ -63,6 +63,18 @@ export const generatedRoutes: GeneratedRoute[] = [
     }
   },
   {
+    name: 'dept-tag',
+    path: '/dept-tag',
+    component: 'layout.base$view.dept-tag',
+    meta: {
+      title: 'dept-tag',
+      i18nKey: 'route.dept-tag',
+      icon: 'solar:tag-line-duotone',
+      roles: ['ADMIN'],
+      order: 4
+    }
+  },
+  {
     name: 'iframe-page',
     path: '/iframe-page/:url',
     component: 'layout.base$view.iframe-page',
@@ -120,18 +132,6 @@ export const generatedRoutes: GeneratedRoute[] = [
       icon: 'solar:tuning-square-line-duotone',
       roles: ['ADMIN'],
       order: 5
-    }
-  },
-  {
-    name: 'dept-tag',
-    path: '/dept-tag',
-    component: 'layout.base$view.dept-tag',
-    meta: {
-      title: 'dept-tag',
-      i18nKey: 'route.dept-tag',
-      icon: 'solar:tag-line-duotone',
-      roles: ['ADMIN'],
-      order: 4
     }
   },
   {
